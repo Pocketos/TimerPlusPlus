@@ -40,7 +40,7 @@ Partial Class frmMain
         '
         Me.lbltimertext.AutoSize = True
         Me.lbltimertext.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltimertext.Location = New System.Drawing.Point(12, 13)
+        Me.lbltimertext.Location = New System.Drawing.Point(12, 14)
         Me.lbltimertext.Name = "lbltimertext"
         Me.lbltimertext.Size = New System.Drawing.Size(32, 37)
         Me.lbltimertext.TabIndex = 0

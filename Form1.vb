@@ -28,7 +28,11 @@
     End Sub
 
     Private Sub BtnExport_Click(sender As Object, e As EventArgs) Handles BtnExport.Click
-        IO.File.WriteAllLines(txtexportdest.Text, lstvtimes)
+        Dim txtwriter As New IO.StreamWriter(txtexportdest.Text)
+        For Each ListItem As ListViewItem In lstvtimes.Items
+            txtwriter.WriteLine(ListItem.Text & "#" & ListItem.SubItems(1).Text & "#" & ListItem.SubItems(2).Text)
+        Next
+        txtwriter.Close()
         MsgBox("Complete")
     End Sub
 End Class
