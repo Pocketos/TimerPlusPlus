@@ -19,9 +19,7 @@
     Public Sub exportsplits()
         Dim txtwriter As New IO.StreamWriter(txtexportdest.Text & filename, append:=True)
         txtwriter.WriteLine("Start Time" & "   " & "Stop Time" & "   " & "Work Time")
-        For Each ListItem As ListViewItem In lstvtimes.Items
-            txtwriter.WriteLine(ListItem.Text & "   " & ListItem.SubItems(1).Text & "   " & ListItem.SubItems(2).Text)
-        Next
+        txtwriter.WriteLine(lstvtimes.Items(splits).Text & "   " & lstvtimes.Items(splits).SubItems(1).Text & "   " & lstvtimes.Items(splits).SubItems(2).Text)
         txtwriter.Close()
     End Sub
 
