@@ -23,9 +23,9 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.lbltimertext = New System.Windows.Forms.Label()
         Me.tmMain = New System.Windows.Forms.Timer(Me.components)
-        Me.btnStart = New System.Windows.Forms.Button()
         Me.btnpause = New System.Windows.Forms.Button()
         Me.lstvtimes = New System.Windows.Forms.ListView()
         Me.chdesc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -35,6 +35,8 @@ Partial Class frmMain
         Me.txtexportdest = New System.Windows.Forms.TextBox()
         Me.btnSplit = New System.Windows.Forms.Button()
         Me.txtdesc = New System.Windows.Forms.TextBox()
+        Me.lbltime = New System.Windows.Forms.Label()
+        Me.lblwktm = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbltimertext
@@ -51,23 +53,13 @@ Partial Class frmMain
         '
         Me.tmMain.Interval = 1000
         '
-        'btnStart
-        '
-        Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStart.Location = New System.Drawing.Point(554, 79)
-        Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(93, 63)
-        Me.btnStart.TabIndex = 1
-        Me.btnStart.Text = "Start"
-        Me.btnStart.UseVisualStyleBackColor = True
-        '
         'btnpause
         '
         Me.btnpause.Enabled = False
         Me.btnpause.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpause.Location = New System.Drawing.Point(652, 79)
+        Me.btnpause.Location = New System.Drawing.Point(559, 79)
         Me.btnpause.Name = "btnpause"
-        Me.btnpause.Size = New System.Drawing.Size(95, 63)
+        Me.btnpause.Size = New System.Drawing.Size(188, 63)
         Me.btnpause.TabIndex = 2
         Me.btnpause.Text = "Pause"
         Me.btnpause.UseVisualStyleBackColor = True
@@ -112,35 +104,55 @@ Partial Class frmMain
         '
         'btnSplit
         '
-        Me.btnSplit.Enabled = False
         Me.btnSplit.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSplit.Location = New System.Drawing.Point(554, 12)
+        Me.btnSplit.Location = New System.Drawing.Point(559, 12)
         Me.btnSplit.Name = "btnSplit"
-        Me.btnSplit.Size = New System.Drawing.Size(193, 61)
+        Me.btnSplit.Size = New System.Drawing.Size(188, 61)
         Me.btnSplit.TabIndex = 7
         Me.btnSplit.Text = "Split"
         Me.btnSplit.UseVisualStyleBackColor = True
         '
         'txtdesc
         '
-        Me.txtdesc.Enabled = False
         Me.txtdesc.Location = New System.Drawing.Point(12, 43)
         Me.txtdesc.Name = "txtdesc"
         Me.txtdesc.Size = New System.Drawing.Size(536, 20)
         Me.txtdesc.TabIndex = 8
+        '
+        'lbltime
+        '
+        Me.lbltime.AutoSize = True
+        Me.lbltime.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltime.Location = New System.Drawing.Point(554, 145)
+        Me.lbltime.Name = "lbltime"
+        Me.lbltime.Size = New System.Drawing.Size(63, 30)
+        Me.lbltime.TabIndex = 9
+        Me.lbltime.Text = "Time:"
+        '
+        'lblwktm
+        '
+        Me.lblwktm.AutoSize = True
+        Me.lblwktm.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblwktm.Location = New System.Drawing.Point(623, 145)
+        Me.lblwktm.Name = "lblwktm"
+        Me.lblwktm.Size = New System.Drawing.Size(64, 30)
+        Me.lblwktm.TabIndex = 10
+        Me.lblwktm.Text = "None"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(759, 228)
+        Me.Controls.Add(Me.lblwktm)
+        Me.Controls.Add(Me.lbltime)
         Me.Controls.Add(Me.txtdesc)
         Me.Controls.Add(Me.btnSplit)
         Me.Controls.Add(Me.txtexportdest)
         Me.Controls.Add(Me.lstvtimes)
         Me.Controls.Add(Me.btnpause)
-        Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.lbltimertext)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.Text = "Timer++"
         Me.ResumeLayout(False)
@@ -150,7 +162,6 @@ Partial Class frmMain
 
     Friend WithEvents lbltimertext As Label
     Friend WithEvents tmMain As Timer
-    Friend WithEvents btnStart As Button
     Friend WithEvents btnpause As Button
     Friend WithEvents lstvtimes As ListView
     Friend WithEvents chStartTime As ColumnHeader
@@ -160,4 +171,6 @@ Partial Class frmMain
     Friend WithEvents btnSplit As Button
     Friend WithEvents chdesc As ColumnHeader
     Friend WithEvents txtdesc As TextBox
+    Friend WithEvents lbltime As Label
+    Friend WithEvents lblwktm As Label
 End Class
