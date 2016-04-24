@@ -28,21 +28,22 @@ Partial Class frmMain
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnpause = New System.Windows.Forms.Button()
         Me.lstvtimes = New System.Windows.Forms.ListView()
+        Me.chdesc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chStartTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chStopTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chworktime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.BtnExport = New System.Windows.Forms.Button()
         Me.txtexportdest = New System.Windows.Forms.TextBox()
         Me.btnSplit = New System.Windows.Forms.Button()
+        Me.txtdesc = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lbltimertext
         '
         Me.lbltimertext.AutoSize = True
-        Me.lbltimertext.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltimertext.Location = New System.Drawing.Point(12, 14)
+        Me.lbltimertext.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltimertext.Location = New System.Drawing.Point(7, 9)
         Me.lbltimertext.Name = "lbltimertext"
-        Me.lbltimertext.Size = New System.Drawing.Size(153, 37)
+        Me.lbltimertext.Size = New System.Drawing.Size(119, 30)
         Me.lbltimertext.TabIndex = 0
         Me.lbltimertext.Text = "Not Started"
         '
@@ -53,7 +54,7 @@ Partial Class frmMain
         'btnStart
         '
         Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStart.Location = New System.Drawing.Point(361, 81)
+        Me.btnStart.Location = New System.Drawing.Point(554, 79)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(93, 63)
         Me.btnStart.TabIndex = 1
@@ -64,7 +65,7 @@ Partial Class frmMain
         '
         Me.btnpause.Enabled = False
         Me.btnpause.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpause.Location = New System.Drawing.Point(460, 81)
+        Me.btnpause.Location = New System.Drawing.Point(652, 79)
         Me.btnpause.Name = "btnpause"
         Me.btnpause.Size = New System.Drawing.Size(95, 63)
         Me.btnpause.TabIndex = 2
@@ -73,13 +74,18 @@ Partial Class frmMain
         '
         'lstvtimes
         '
-        Me.lstvtimes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chStartTime, Me.chStopTime, Me.chworktime})
-        Me.lstvtimes.Location = New System.Drawing.Point(12, 53)
+        Me.lstvtimes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chdesc, Me.chStartTime, Me.chStopTime, Me.chworktime})
+        Me.lstvtimes.Location = New System.Drawing.Point(12, 70)
         Me.lstvtimes.Name = "lstvtimes"
-        Me.lstvtimes.Size = New System.Drawing.Size(343, 156)
+        Me.lstvtimes.Size = New System.Drawing.Size(536, 139)
         Me.lstvtimes.TabIndex = 4
         Me.lstvtimes.UseCompatibleStateImageBehavior = False
         Me.lstvtimes.View = System.Windows.Forms.View.Details
+        '
+        'chdesc
+        '
+        Me.chdesc.Text = "Decription"
+        Me.chdesc.Width = 240
         '
         'chStartTime
         '
@@ -94,22 +100,11 @@ Partial Class frmMain
         'chworktime
         '
         Me.chworktime.Text = "Time worked"
-        Me.chworktime.Width = 100
-        '
-        'BtnExport
-        '
-        Me.BtnExport.Enabled = False
-        Me.BtnExport.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExport.Location = New System.Drawing.Point(361, 150)
-        Me.BtnExport.Name = "BtnExport"
-        Me.BtnExport.Size = New System.Drawing.Size(194, 33)
-        Me.BtnExport.TabIndex = 5
-        Me.BtnExport.Text = "Export Running Log"
-        Me.BtnExport.UseVisualStyleBackColor = True
+        Me.chworktime.Width = 87
         '
         'txtexportdest
         '
-        Me.txtexportdest.Location = New System.Drawing.Point(362, 189)
+        Me.txtexportdest.Location = New System.Drawing.Point(554, 189)
         Me.txtexportdest.Name = "txtexportdest"
         Me.txtexportdest.Size = New System.Drawing.Size(193, 20)
         Me.txtexportdest.TabIndex = 6
@@ -119,21 +114,29 @@ Partial Class frmMain
         '
         Me.btnSplit.Enabled = False
         Me.btnSplit.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSplit.Location = New System.Drawing.Point(362, 14)
+        Me.btnSplit.Location = New System.Drawing.Point(554, 12)
         Me.btnSplit.Name = "btnSplit"
         Me.btnSplit.Size = New System.Drawing.Size(193, 61)
         Me.btnSplit.TabIndex = 7
         Me.btnSplit.Text = "Split"
         Me.btnSplit.UseVisualStyleBackColor = True
         '
+        'txtdesc
+        '
+        Me.txtdesc.Enabled = False
+        Me.txtdesc.Location = New System.Drawing.Point(12, 43)
+        Me.txtdesc.Name = "txtdesc"
+        Me.txtdesc.Size = New System.Drawing.Size(536, 20)
+        Me.txtdesc.TabIndex = 8
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(567, 228)
+        Me.ClientSize = New System.Drawing.Size(759, 228)
+        Me.Controls.Add(Me.txtdesc)
         Me.Controls.Add(Me.btnSplit)
         Me.Controls.Add(Me.txtexportdest)
-        Me.Controls.Add(Me.BtnExport)
         Me.Controls.Add(Me.lstvtimes)
         Me.Controls.Add(Me.btnpause)
         Me.Controls.Add(Me.btnStart)
@@ -153,7 +156,8 @@ Partial Class frmMain
     Friend WithEvents chStartTime As ColumnHeader
     Friend WithEvents chStopTime As ColumnHeader
     Friend WithEvents chworktime As ColumnHeader
-    Friend WithEvents BtnExport As Button
     Friend WithEvents txtexportdest As TextBox
     Friend WithEvents btnSplit As Button
+    Friend WithEvents chdesc As ColumnHeader
+    Friend WithEvents txtdesc As TextBox
 End Class

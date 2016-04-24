@@ -1,5 +1,7 @@
 ﻿Public Class frmMain
 
+    Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Integer) As Short
+
     Public splits As Integer = 0
     Public worktime As Integer = 0
     Public filename As String
@@ -12,14 +14,18 @@
         currentday = DateAndTime.Day(currentdate)
         currentyear = Year(currentdate)
 
-        filename = currentday & "-" & currentmonth & "-" & currentyear & ".txt"
+        filename = currentday & "-" & currentmonth & "-" & currentyear & ".csv"
+
+        Dim txtstarter As New IO.StreamWriter(txtexportdest.Text & filename, append:=True)
+        txtstarter.WriteLine(filename)
+        txtstarter.WriteLine("Description" & "," & "Start Time" & "," & "Stop Time" & "," & "Work Time")
+        txtstarter.Close()
 
     End Sub
 
     Public Sub exportsplits()
         Dim txtwriter As New IO.StreamWriter(txtexportdest.Text & filename, append:=True)
-        txtwriter.WriteLine("Start Time" & "   " & "Stop Time" & "   " & "Work Time")
-        txtwriter.WriteLine(lstvtimes.Items(splits).Text & "   " & lstvtimes.Items(splits).SubItems(1).Text & "   " & lstvtimes.Items(splits).SubItems(2).Text)
+        txtwriter.WriteLine(txtdesc.Text & "," & lstvtimes.Items(splits).SubItems(1).Text & "," & lstvtimes.Items(splits).SubItems(2).Text & "," & lstvtimes.Items(splits).SubItems(3).Text)
         txtwriter.Close()
     End Sub
 
@@ -35,9 +41,12 @@
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         btnSplit.Enabled = True
         btnpause.Enabled = True
-        BtnExport.Enabled = True
         tmMain.Enabled = True
-        lstvtimes.Items.Add(DateAndTime.TimeOfDay)
+        txtdesc.Enabled = True
+        lstvtimes.Items.Add(txtdesc.Text)
+        txtdesc.Clear()
+        lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
+        btnStart.Enabled = False
     End Sub
 
     Private Sub btnpause_Click(sender As Object, e As EventArgs) Handles btnpause.Click
@@ -53,17 +62,6 @@
 
     End Sub
 
-    Private Sub BtnExport_Click(sender As Object, e As EventArgs) Handles BtnExport.Click
-        Dim txtwriter As New IO.StreamWriter(txtexportdest.Text)
-        lstvtimes.Items(splits).SubItems.Add(0)
-        lstvtimes.Items(splits).SubItems.Add(0)
-        For Each ListItem As ListViewItem In lstvtimes.Items
-            txtwriter.WriteLine(ListItem.Text & "   " & ListItem.SubItems(1).Text & "   " & ListItem.SubItems(2).Text)
-        Next
-        txtwriter.Close()
-        MsgBox("Complete")
-    End Sub
-
     Private Sub btnSplit_Click(sender As Object, e As EventArgs) Handles btnSplit.Click
         lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
         Dim time = New TimeSpan(0, 0, worktime).ToString("c")
@@ -71,6 +69,28 @@
         exportsplits()
         splits = splits + 1
         worktime = 0
-        lstvtimes.Items.Add(DateAndTime.TimeOfDay)
+        lstvtimes.Items.Add(txtdesc.Text)
+        txtdesc.Clear()
+        lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
     End Sub
+
+    Private Sub txtdesc_KeyDown(ByVal Sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtdesc.KeyDown
+        If e.KeyValue = Keys.Enter Then
+            e.SuppressKeyPress = True
+            lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
+            Dim time = New TimeSpan(0, 0, worktime).ToString("c")
+            lstvtimes.Items(splits).SubItems.Add(time)
+            exportsplits()
+            splits = splits + 1
+            worktime = 0
+            lstvtimes.Items.Add(txtdesc.Text)
+            txtdesc.Clear()
+            lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
+        Else
+        End If
+    End Sub
+
+    Private Function IsNumeric(keyChar As Object) As Boolean
+        Throw New NotImplementedException()
+    End Function
 End Class
