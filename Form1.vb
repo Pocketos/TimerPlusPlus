@@ -17,16 +17,20 @@
 
         filename = currentday & "-" & currentmonth & "-" & currentyear & ".csv"
 
-        Dim txtstarter As New IO.StreamWriter(txtexportdest.Text & filename, append:=True)
-        txtstarter.WriteLine(filename)
-        txtstarter.WriteLine("Description" & "," & "Start Time" & "," & "Stop Time" & "," & "Work Time")
-        txtstarter.Close()
-
+        If My.Computer.FileSystem.DirectoryExists(My.Computer.FileSystem.CurrentDirectory & "\Days") Then
+            Dim txtstarter As New IO.StreamWriter(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename, append:=True)
+            txtstarter.WriteLine(filename)
+            txtstarter.WriteLine("Description" & "," & "Start Time" & "," & "Stop Time" & "," & "Work Time")
+            txtstarter.Close()
+        Else
+            System.IO.Directory.CreateDirectory(My.Computer.FileSystem.CurrentDirectory & "\Days")
+            datecheck()
+        End If
     End Sub
 
     Public Sub exportsplits()
-        Dim txtwriter As New IO.StreamWriter(txtexportdest.Text & filename, append:=True)
-        txtwriter.WriteLine(txtdesc.Text & "," & lstvtimes.Items(splits).SubItems(1).Text & "," & lstvtimes.Items(splits).SubItems(2).Text & "," & lstvtimes.Items(splits).SubItems(3).Text)
+        Dim txtwriter As New IO.StreamWriter(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename, append:=True)
+        txtwriter.WriteLine(lstvtimes.Items(splits).Text & "," & lstvtimes.Items(splits).SubItems(1).Text & "," & lstvtimes.Items(splits).SubItems(2).Text & "," & lstvtimes.Items(splits).SubItems(3).Text)
         txtwriter.Close()
     End Sub
 
@@ -47,6 +51,7 @@
             lstvtimes.Items.Add(txtdesc.Text)
             txtdesc.Clear()
             lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
+            lstvtimes.Items(splits).EnsureVisible()
         End If
     End Sub
 
@@ -76,10 +81,6 @@
         End If
     End Sub
 
-    Private Sub lbltimertext_Click(sender As Object, e As EventArgs) Handles lbltimertext.Click
-
-    End Sub
-
     Private Sub btnSplit_Click(sender As Object, e As EventArgs) Handles btnSplit.Click
         Split()
     End Sub
@@ -95,4 +96,8 @@
     Private Function IsNumeric(keyChar As Object) As Boolean
         Throw New NotImplementedException()
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        System.Diagnostics.Process.Start(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename)
+    End Sub
 End Class
