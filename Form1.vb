@@ -18,10 +18,14 @@
         filename = currentday & "-" & currentmonth & "-" & currentyear & ".csv"
 
         If My.Computer.FileSystem.DirectoryExists(My.Computer.FileSystem.CurrentDirectory & "\Days") Then
-            Dim txtstarter As New IO.StreamWriter(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename, append:=True)
-            txtstarter.WriteLine(filename)
-            txtstarter.WriteLine("Description" & "," & "Start Time" & "," & "Stop Time" & "," & "Work Time")
-            txtstarter.Close()
+            If My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename) = False Then
+                Dim txtstarter As New IO.StreamWriter(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename, append:=True)
+                txtstarter.WriteLine(filename)
+                txtstarter.WriteLine("Description" & "," & "Start Time" & "," & "Stop Time" & "," & "Work Time" & "," & "Recorded?")
+                txtstarter.Close()
+            Else
+                Exit Sub
+            End If
         Else
             System.IO.Directory.CreateDirectory(My.Computer.FileSystem.CurrentDirectory & "\Days")
             datecheck()
@@ -30,7 +34,7 @@
 
     Public Sub exportsplits()
         Dim txtwriter As New IO.StreamWriter(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename, append:=True)
-        txtwriter.WriteLine(lstvtimes.Items(splits).Text & "," & lstvtimes.Items(splits).SubItems(1).Text & "," & lstvtimes.Items(splits).SubItems(2).Text & "," & lstvtimes.Items(splits).SubItems(3).Text)
+        txtwriter.WriteLine(lstvtimes.Items(splits).Text & "," & lstvtimes.Items(splits).SubItems(1).Text & "," & lstvtimes.Items(splits).SubItems(2).Text & "," & lstvtimes.Items(splits).SubItems(3).Text & "," & lstvtimes.Items(splits).SubItems(4).Text)
         txtwriter.Close()
     End Sub
 
@@ -45,6 +49,12 @@
             lstvtimes.Items(splits).SubItems.Add(DateAndTime.TimeOfDay)
             Dim time = New TimeSpan(0, 0, worktime).ToString("c")
             lstvtimes.Items(splits).SubItems.Add(time)
+            If chkbxrecorded.Checked = True Then
+                lstvtimes.Items(splits).SubItems.Add("Yes")
+                chkbxrecorded.Checked = False
+            Else
+                lstvtimes.Items(splits).SubItems.Add("No")
+            End If
             exportsplits()
             splits = splits + 1
             worktime = 0

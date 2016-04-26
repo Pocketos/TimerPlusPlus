@@ -32,6 +32,7 @@ Partial Class frmMain
         Me.chStartTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chStopTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chworktime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chRecorded = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSplit = New System.Windows.Forms.Button()
         Me.txtdesc = New System.Windows.Forms.TextBox()
         Me.lbltime = New System.Windows.Forms.Label()
@@ -39,6 +40,7 @@ Partial Class frmMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.statustripbottom = New System.Windows.Forms.StatusStrip()
         Me.tsslblversion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.chkbxrecorded = New System.Windows.Forms.CheckBox()
         Me.statustripbottom.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,8 +71,9 @@ Partial Class frmMain
         '
         'lstvtimes
         '
-        Me.lstvtimes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chdesc, Me.chStartTime, Me.chStopTime, Me.chworktime})
+        Me.lstvtimes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chdesc, Me.chStartTime, Me.chStopTime, Me.chworktime, Me.chRecorded})
         Me.lstvtimes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.lstvtimes.LabelEdit = True
         Me.lstvtimes.LabelWrap = False
         Me.lstvtimes.Location = New System.Drawing.Point(12, 70)
         Me.lstvtimes.Name = "lstvtimes"
@@ -82,22 +85,27 @@ Partial Class frmMain
         'chdesc
         '
         Me.chdesc.Text = "Decription"
-        Me.chdesc.Width = 240
+        Me.chdesc.Width = 180
         '
         'chStartTime
         '
         Me.chStartTime.Text = "Start time"
-        Me.chStartTime.Width = 100
+        Me.chStartTime.Width = 90
         '
         'chStopTime
         '
         Me.chStopTime.Text = "Stop Time"
-        Me.chStopTime.Width = 100
+        Me.chStopTime.Width = 87
         '
         'chworktime
         '
         Me.chworktime.Text = "Time worked"
-        Me.chworktime.Width = 92
+        Me.chworktime.Width = 111
+        '
+        'chRecorded
+        '
+        Me.chRecorded.Text = "Recorded"
+        Me.chRecorded.Width = 61
         '
         'btnSplit
         '
@@ -159,13 +167,25 @@ Partial Class frmMain
         '
         Me.tsslblversion.Name = "tsslblversion"
         Me.tsslblversion.Size = New System.Drawing.Size(143, 17)
-        Me.tsslblversion.Text = "Timer ++          Version 1.0"
+        Me.tsslblversion.Text = "Timer ++          Version 1.3"
+        '
+        'chkbxrecorded
+        '
+        Me.chkbxrecorded.AutoSize = True
+        Me.chkbxrecorded.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkbxrecorded.Location = New System.Drawing.Point(326, 12)
+        Me.chkbxrecorded.Name = "chkbxrecorded"
+        Me.chkbxrecorded.Size = New System.Drawing.Size(227, 29)
+        Me.chkbxrecorded.TabIndex = 13
+        Me.chkbxrecorded.Text = "Mark split as recorded?"
+        Me.chkbxrecorded.UseVisualStyleBackColor = True
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(759, 260)
+        Me.Controls.Add(Me.chkbxrecorded)
         Me.Controls.Add(Me.statustripbottom)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblwktm)
@@ -202,4 +222,6 @@ Partial Class frmMain
     Friend WithEvents Button1 As Button
     Friend WithEvents statustripbottom As StatusStrip
     Friend WithEvents tsslblversion As ToolStripStatusLabel
+    Friend WithEvents chRecorded As ColumnHeader
+    Friend WithEvents chkbxrecorded As CheckBox
 End Class
