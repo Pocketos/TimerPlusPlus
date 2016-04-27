@@ -66,6 +66,7 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tsslblAppVersion.Text = My.Application.Info.Version.ToString()
         datecheck()
     End Sub
 
@@ -109,5 +110,20 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         System.Diagnostics.Process.Start(My.Computer.FileSystem.CurrentDirectory & "\Days\" & filename)
+    End Sub
+
+    Private Sub btnAddTime_Click(sender As Object, e As EventArgs) Handles btnAddTime.Click
+        worktime = worktime + 60
+        Dim time = New TimeSpan(0, 0, worktime).ToString("c")
+        lblwktm.Text = time
+    End Sub
+
+    Private Sub btnMinusTime_Click(sender As Object, e As EventArgs) Handles btnMinusTime.Click
+        If worktime >= 60 Then
+            worktime = worktime - 60
+            Dim time = New TimeSpan(0, 0, worktime).ToString("c")
+            lblwktm.Text = time
+        Else
+        End If
     End Sub
 End Class

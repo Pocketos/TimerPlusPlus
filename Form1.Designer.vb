@@ -39,8 +39,11 @@ Partial Class frmMain
         Me.lblwktm = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.statustripbottom = New System.Windows.Forms.StatusStrip()
-        Me.tsslblversion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslblAppName = New System.Windows.Forms.ToolStripStatusLabel()
         Me.chkbxrecorded = New System.Windows.Forms.CheckBox()
+        Me.btnMinusTime = New System.Windows.Forms.Button()
+        Me.btnAddTime = New System.Windows.Forms.Button()
+        Me.tsslblAppVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statustripbottom.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,10 +64,10 @@ Partial Class frmMain
         'btnpause
         '
         Me.btnpause.Enabled = False
-        Me.btnpause.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpause.Location = New System.Drawing.Point(559, 79)
+        Me.btnpause.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpause.Location = New System.Drawing.Point(559, 66)
         Me.btnpause.Name = "btnpause"
-        Me.btnpause.Size = New System.Drawing.Size(188, 63)
+        Me.btnpause.Size = New System.Drawing.Size(188, 48)
         Me.btnpause.TabIndex = 2
         Me.btnpause.Text = "Pause"
         Me.btnpause.UseVisualStyleBackColor = True
@@ -77,7 +80,7 @@ Partial Class frmMain
         Me.lstvtimes.LabelWrap = False
         Me.lstvtimes.Location = New System.Drawing.Point(12, 70)
         Me.lstvtimes.Name = "lstvtimes"
-        Me.lstvtimes.Size = New System.Drawing.Size(536, 148)
+        Me.lstvtimes.Size = New System.Drawing.Size(536, 165)
         Me.lstvtimes.TabIndex = 4
         Me.lstvtimes.UseCompatibleStateImageBehavior = False
         Me.lstvtimes.View = System.Windows.Forms.View.Details
@@ -109,10 +112,10 @@ Partial Class frmMain
         '
         'btnSplit
         '
-        Me.btnSplit.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSplit.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSplit.Location = New System.Drawing.Point(559, 12)
         Me.btnSplit.Name = "btnSplit"
-        Me.btnSplit.Size = New System.Drawing.Size(188, 61)
+        Me.btnSplit.Size = New System.Drawing.Size(188, 48)
         Me.btnSplit.TabIndex = 7
         Me.btnSplit.Text = "Split"
         Me.btnSplit.UseVisualStyleBackColor = True
@@ -128,7 +131,7 @@ Partial Class frmMain
         '
         Me.lbltime.AutoSize = True
         Me.lbltime.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltime.Location = New System.Drawing.Point(557, 145)
+        Me.lbltime.Location = New System.Drawing.Point(585, 141)
         Me.lbltime.Name = "lbltime"
         Me.lbltime.Size = New System.Drawing.Size(63, 30)
         Me.lbltime.TabIndex = 9
@@ -138,36 +141,36 @@ Partial Class frmMain
         '
         Me.lblwktm.AutoSize = True
         Me.lblwktm.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblwktm.Location = New System.Drawing.Point(623, 145)
+        Me.lblwktm.Location = New System.Drawing.Point(634, 141)
         Me.lblwktm.Name = "lblwktm"
-        Me.lblwktm.Size = New System.Drawing.Size(64, 30)
+        Me.lblwktm.Size = New System.Drawing.Size(89, 30)
         Me.lblwktm.TabIndex = 10
-        Me.lblwktm.Text = "None"
+        Me.lblwktm.Text = "00:00:00"
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(559, 180)
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(559, 198)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(187, 38)
+        Me.Button1.Size = New System.Drawing.Size(188, 37)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Review Splits"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'statustripbottom
         '
-        Me.statustripbottom.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslblversion})
+        Me.statustripbottom.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslblAppName, Me.tsslblAppVersion})
         Me.statustripbottom.Location = New System.Drawing.Point(0, 238)
         Me.statustripbottom.Name = "statustripbottom"
         Me.statustripbottom.Size = New System.Drawing.Size(759, 22)
         Me.statustripbottom.TabIndex = 12
         Me.statustripbottom.Text = "StatusStrip1"
         '
-        'tsslblversion
+        'tsslblAppName
         '
-        Me.tsslblversion.Name = "tsslblversion"
-        Me.tsslblversion.Size = New System.Drawing.Size(143, 17)
-        Me.tsslblversion.Text = "Timer ++          Version 1.3"
+        Me.tsslblAppName.Name = "tsslblAppName"
+        Me.tsslblAppName.Size = New System.Drawing.Size(57, 17)
+        Me.tsslblAppName.Text = "Timer ++"
         '
         'chkbxrecorded
         '
@@ -180,11 +183,39 @@ Partial Class frmMain
         Me.chkbxrecorded.Text = "Mark split as recorded?"
         Me.chkbxrecorded.UseVisualStyleBackColor = True
         '
+        'btnMinusTime
+        '
+        Me.btnMinusTime.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMinusTime.Location = New System.Drawing.Point(721, 120)
+        Me.btnMinusTime.Name = "btnMinusTime"
+        Me.btnMinusTime.Size = New System.Drawing.Size(26, 72)
+        Me.btnMinusTime.TabIndex = 14
+        Me.btnMinusTime.Text = "-"
+        Me.btnMinusTime.UseVisualStyleBackColor = True
+        '
+        'btnAddTime
+        '
+        Me.btnAddTime.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddTime.Location = New System.Drawing.Point(559, 120)
+        Me.btnAddTime.Name = "btnAddTime"
+        Me.btnAddTime.Size = New System.Drawing.Size(26, 72)
+        Me.btnAddTime.TabIndex = 15
+        Me.btnAddTime.Text = "+"
+        Me.btnAddTime.UseVisualStyleBackColor = True
+        '
+        'tsslblAppVersion
+        '
+        Me.tsslblAppVersion.Name = "tsslblAppVersion"
+        Me.tsslblAppVersion.Size = New System.Drawing.Size(22, 17)
+        Me.tsslblAppVersion.Text = "0.0"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(759, 260)
+        Me.Controls.Add(Me.btnAddTime)
+        Me.Controls.Add(Me.btnMinusTime)
         Me.Controls.Add(Me.chkbxrecorded)
         Me.Controls.Add(Me.statustripbottom)
         Me.Controls.Add(Me.Button1)
@@ -221,7 +252,10 @@ Partial Class frmMain
     Friend WithEvents lblwktm As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents statustripbottom As StatusStrip
-    Friend WithEvents tsslblversion As ToolStripStatusLabel
+    Friend WithEvents tsslblAppName As ToolStripStatusLabel
     Friend WithEvents chRecorded As ColumnHeader
     Friend WithEvents chkbxrecorded As CheckBox
+    Friend WithEvents btnMinusTime As Button
+    Friend WithEvents btnAddTime As Button
+    Friend WithEvents tsslblAppVersion As ToolStripStatusLabel
 End Class
