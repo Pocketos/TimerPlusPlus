@@ -22,5 +22,15 @@ Timer++
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Timer__.My.Resources.Resources.stopwatch">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Timer__.My.Resources.Resources.stopwatchpaused">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
 </members>
 </doc>

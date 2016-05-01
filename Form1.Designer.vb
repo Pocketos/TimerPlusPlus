@@ -40,10 +40,10 @@ Partial Class frmMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.statustripbottom = New System.Windows.Forms.StatusStrip()
         Me.tsslblAppName = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslblAppVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.chkbxrecorded = New System.Windows.Forms.CheckBox()
         Me.btnMinusTime = New System.Windows.Forms.Button()
         Me.btnAddTime = New System.Windows.Forms.Button()
-        Me.tsslblAppVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statustripbottom.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -172,6 +172,12 @@ Partial Class frmMain
         Me.tsslblAppName.Size = New System.Drawing.Size(57, 17)
         Me.tsslblAppName.Text = "Timer ++"
         '
+        'tsslblAppVersion
+        '
+        Me.tsslblAppVersion.Name = "tsslblAppVersion"
+        Me.tsslblAppVersion.Size = New System.Drawing.Size(22, 17)
+        Me.tsslblAppVersion.Text = "0.0"
+        '
         'chkbxrecorded
         '
         Me.chkbxrecorded.AutoSize = True
@@ -186,7 +192,7 @@ Partial Class frmMain
         'btnMinusTime
         '
         Me.btnMinusTime.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMinusTime.Location = New System.Drawing.Point(721, 120)
+        Me.btnMinusTime.Location = New System.Drawing.Point(559, 120)
         Me.btnMinusTime.Name = "btnMinusTime"
         Me.btnMinusTime.Size = New System.Drawing.Size(26, 72)
         Me.btnMinusTime.TabIndex = 14
@@ -196,18 +202,12 @@ Partial Class frmMain
         'btnAddTime
         '
         Me.btnAddTime.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddTime.Location = New System.Drawing.Point(559, 120)
+        Me.btnAddTime.Location = New System.Drawing.Point(721, 120)
         Me.btnAddTime.Name = "btnAddTime"
         Me.btnAddTime.Size = New System.Drawing.Size(26, 72)
         Me.btnAddTime.TabIndex = 15
         Me.btnAddTime.Text = "+"
         Me.btnAddTime.UseVisualStyleBackColor = True
-        '
-        'tsslblAppVersion
-        '
-        Me.tsslblAppVersion.Name = "tsslblAppVersion"
-        Me.tsslblAppVersion.Size = New System.Drawing.Size(22, 17)
-        Me.tsslblAppVersion.Text = "0.0"
         '
         'frmMain
         '

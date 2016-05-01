@@ -84,11 +84,13 @@
             btnpause.Text = "Resume"
             txtdesc.Enabled = False
             btnSplit.Enabled = False
+            Me.Icon = My.Resources.stopwatchpaused
         Else
             tmMain.Enabled = True
             txtdesc.Enabled = True
             btnSplit.Enabled = True
             btnpause.Text = "Pause"
+            Me.Icon = My.Resources.stopwatch
         End If
     End Sub
 
