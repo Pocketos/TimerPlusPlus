@@ -1,0 +1,13 @@
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Timer++.exe.config
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.exe
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.xml
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.pdb
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\splitsDB.mdf
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\splitsDB_log.ldf
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Timer++.exe
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Timer++.pdb
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Timer++.xml
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer.vbprojResolveAssemblyReference.cache
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer__.frmMain.resources
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer__.Resources.resources
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer.vbproj.GenerateResource.Cache

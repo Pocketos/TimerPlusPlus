@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataset_splits" targetNamespace="http://tempuri.org/dataset_splits.xsd" xmlns:mstns="http://tempuri.org/dataset_splits.xsd" xmlns="http://tempuri.org/dataset_splits.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="splitsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="splitsDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Timer__.My.MySettings.GlobalReference.Default.splitsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataset_splits" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dataset_splits" msprop:Generator_UserDSName="dataset_splits">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_splits" msprop:Generator_TableClassName="dt_splitsDataTable" msprop:Generator_TableVarName="tabledt_splits" msprop:Generator_TablePropName="dt_splits" msprop:Generator_RowDeletingName="dt_splitsRowDeleting" msprop:Generator_RowChangingName="dt_splitsRowChanging" msprop:Generator_RowEvHandlerName="dt_splitsRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_splitsRowDeleted" msprop:Generator_UserTableName="dt_splits" msprop:Generator_RowChangedName="dt_splitsRowChanged" msprop:Generator_RowEvArgName="dt_splitsRowChangeEvent" msprop:Generator_RowClassName="dt_splitsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="Start_x0020_Time" msprop:Generator_ColumnVarNameInTable="columnStart_Time" msprop:Generator_ColumnPropNameInRow="Start_Time" msprop:Generator_ColumnPropNameInTable="Start_TimeColumn" msprop:Generator_UserColumnName="Start Time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Stop_x0020_Time" msprop:Generator_ColumnVarNameInTable="columnStop_Time" msprop:Generator_ColumnPropNameInRow="Stop_Time" msprop:Generator_ColumnPropNameInTable="Stop_TimeColumn" msprop:Generator_UserColumnName="Stop Time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Time_x0020_Worked" msprop:Generator_ColumnVarNameInTable="columnTime_Worked" msprop:Generator_ColumnPropNameInRow="Time_Worked" msprop:Generator_ColumnPropNameInTable="Time_WorkedColumn" msprop:Generator_UserColumnName="Time Worked" type="xs:duration" minOccurs="0" />
+              <xs:element name="Recorded_x003F_" msprop:Generator_ColumnVarNameInTable="_columnRecorded_" msprop:Generator_ColumnPropNameInRow="_Recorded_" msprop:Generator_ColumnPropNameInTable="_Recorded_Column" msprop:Generator_UserColumnName="Recorded?" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="dt_splitsKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dt_splits" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

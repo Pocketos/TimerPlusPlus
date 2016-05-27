@@ -138,6 +138,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Timer_splitsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Timer_splitsDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -162,8 +167,26 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Timer_splitsDataSet.xsc">
+      <DependentUpon>Timer_splitsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Timer_splitsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Timer_splitsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Timer_splitsDataSet.xss">
+      <DependentUpon>Timer_splitsDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Databases\Timer_splits.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Databases\Timer_splits_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Timer_splits.mdf</DependentUpon>
+    </Content>
     <None Include="stopwatchnewpaused.ico" />
     <None Include="stopwatchnew.ico" />
     <None Include="stopwatchPaused.ico" />

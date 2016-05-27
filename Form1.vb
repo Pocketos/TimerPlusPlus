@@ -66,6 +66,8 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Timer_splitsDataSet.Splits' table. You can move, or remove it, as needed.
+        Me.SplitsTableAdapter.Fill(Me.Timer_splitsDataSet.Splits)
         tsslblAppVersion.Text = My.Application.Info.Version.ToString()
         datecheck()
     End Sub
@@ -127,5 +129,17 @@
             lblwktm.Text = time
         Else
         End If
+    End Sub
+
+    Private Sub SplitsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles SplitsBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.SplitsBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Timer_splitsDataSet)
+        MsgBox("Data Saved")
+
+    End Sub
+
+    Private Sub SplitsBindingNavigator_RefreshItems(sender As Object, e As EventArgs) Handles SplitsBindingNavigator.RefreshItems
+
     End Sub
 End Class

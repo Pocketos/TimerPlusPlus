@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="splits" msprop:Generator_TableClassName="splitsDataTable" msprop:Generator_TableVarName="tablesplits" msprop:Generator_TablePropName="splits" msprop:Generator_RowDeletingName="splitsRowDeleting" msprop:Generator_RowChangingName="splitsRowChanging" msprop:Generator_RowEvHandlerName="splitsRowChangeEventHandler" msprop:Generator_RowDeletedName="splitsRowDeleted" msprop:Generator_UserTableName="splits" msprop:Generator_RowChangedName="splitsRowChanged" msprop:Generator_RowEvArgName="splitsRowChangeEvent" msprop:Generator_RowClassName="splitsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" type="xs:string" minOccurs="0" />
+              <xs:element name="start_time" msprop:Generator_ColumnVarNameInTable="columnstart_time" msprop:Generator_ColumnPropNameInRow="start_time" msprop:Generator_ColumnPropNameInTable="start_timeColumn" msprop:Generator_UserColumnName="start_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="stop_time" msprop:Generator_ColumnVarNameInTable="columnstop_time" msprop:Generator_ColumnPropNameInRow="stop_time" msprop:Generator_ColumnPropNameInTable="stop_timeColumn" msprop:Generator_UserColumnName="stop_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="time_worked" msprop:Generator_ColumnVarNameInTable="columntime_worked" msprop:Generator_ColumnPropNameInRow="time_worked" msprop:Generator_ColumnPropNameInTable="time_workedColumn" msprop:Generator_UserColumnName="time_worked" type="xs:duration" minOccurs="0" />
+              <xs:element name="recorded" msprop:Generator_ColumnVarNameInTable="columnrecorded" msprop:Generator_ColumnPropNameInRow="recorded" msprop:Generator_ColumnPropNameInTable="recordedColumn" msprop:Generator_UserColumnName="recorded" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

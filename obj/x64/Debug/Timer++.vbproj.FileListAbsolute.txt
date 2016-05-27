@@ -9,3 +9,5 @@ C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.vbproj.GenerateR
 C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.exe
 C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.xml
 C:\Users\Tyler\Source\Repos\TimerPlusPlus\obj\x64\Debug\Timer++.pdb
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Databases\Timer_splits.mdf
+C:\Users\Tyler\Source\Repos\TimerPlusPlus\bin\x64\Debug\Databases\Timer_splits_log.ldf
